@@ -45,6 +45,7 @@ class IncidentModel {
     
     func filterValues(currHour: Int) -> [NSValue : Int] {
         
+        let currHour = currHour % 24
         var coords = [NSValue : Int]()
 
         for i in incidentArr {

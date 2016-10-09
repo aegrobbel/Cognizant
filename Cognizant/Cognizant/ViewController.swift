@@ -32,10 +32,10 @@ class ViewController: UIViewController {
         locationManager!.requestWhenInUseAuthorization()
         
         let constraints = [
-            view.leadingAnchor.constraintEqualToAnchor(mapView.leadingAnchor),
-            view.trailingAnchor.constraintEqualToAnchor(mapView.trailingAnchor),
-            view.topAnchor.constraintEqualToAnchor(mapView.topAnchor),
-            view.bottomAnchor.constraintEqualToAnchor(mapView.bottomAnchor)
+            view.leadingAnchor.constraintEqualToAnchor(mapView.leadingAnchor)!,
+            view.trailingAnchor.constraintEqualToAnchor(mapView.trailingAnchor)!,
+            view.topAnchor.constraintEqualToAnchor(mapView.topAnchor)!,
+            view.bottomAnchor.constraintEqualToAnchor(mapView.bottomAnchor)!
         ]
         
         NSLayoutConstraint.activateConstraints(constraints)
