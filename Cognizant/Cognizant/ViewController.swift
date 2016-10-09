@@ -12,8 +12,21 @@ import CoreLocation
 
 class ViewController: UIViewController, MKMapViewDelegate {
     
+    var currHour = 0 {
+        didSet {
+            if oldValue != currHour {
+                updateHeatmap()
+            }
+        }
+    }
+    
+    let incident = IncidentModel()
+    let heatMap = DTMHeatmap()
+    
     let mapView = MKMapView()
     let slider = UISlider()
+    
+    let formatter = NSDateFormatter()
     
     var locationManager: CLLocationManager?
     
@@ -58,6 +71,18 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func sliderChanged() {
         print(slider.value)
+        
+        currHour = Int(round(slider.value)) % 24
+    }
+    
+    func updateHeatmap() {
+        heatMap.setData(incident.filterValues(currHour))
+        mapView.rendererForOverlay(heatMap)?.setNeedsDisplay()
+        
+        if let date = NSCalendar.currentCalendar().dateBySettingUnit(.Hour, value: currHour, ofDate: NSDate(), options: []) {
+            navigationItem.title = formatter.stringFromDate(date)
+        }
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -67,49 +92,19 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let date = NSDate()
-        let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: date)
-        slider.value = Float(hour)
+        formatter.setLocalizedDateFormatFromTemplate("h aa")
         
-        let data = parseData()
-        let heatMap = DTMHeatmap()
-        heatMap.setData(data)
+        let date = NSDate()
+        currHour = NSCalendar.currentCalendar().component(.Hour, fromDate: date)
+        slider.value = Float(currHour)
+        
         mapView.addOverlay(heatMap)
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         return DTMHeatmapRenderer.init(overlay: overlay)
     }
-    
-    func parseData() -> [NSValue : Int] {
-        let url = NSBundle.mainBundle().URLForResource("incidents15", withExtension: "json")!
-        let data = NSData(contentsOfURL: url)!
-        
-        var coords = [NSValue : Int]()
-        
-        do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-            
-            if let crimes = json["crimes"] as? [[String: AnyObject]] {
-                for crime in crimes {
-                    guard let lat = crime["LAT"] as? Double, let long = crime["LON"] as? Double, let hour = crime["HOUR"] as? Int else {
-                        continue
-                    }
-                    
-                    let loc = CLLocation(latitude: lat, longitude: long)
-                    let point = MKMapPointForCoordinate(loc.coordinate)
-                    let weight = 1
-                    let pointWrapper = NSValue(MKMapPoint: point)
-                    coords[pointWrapper] = weight
-                    
-                }
-            }
-        } catch {
-            print("error serializing JSON: \(error)")
-        }
-        return coords
-    }
-    
+
     func reCenter() {
         let userLocation = mapView.userLocation
         
@@ -118,7 +113,4 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         mapView.setRegion(region, animated: true)
     }
-
-    
 }
-

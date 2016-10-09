@@ -18,6 +18,7 @@
 		A02F57251DA9E570009E4031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02F57231DA9E570009E4031 /* LaunchScreen.storyboard */; };
 		A02F572D1DA9F5F8009E4031 /* incidents15.json in Resources */ = {isa = PBXBuildFile; fileRef = A02F572C1DA9F5F8009E4031 /* incidents15.json */; };
 		A02F57311DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = A02F57301DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m */; };
+		A02F57331DAA14D5009E4031 /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F57321DAA14D5009E4031 /* Incident.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A02F572E1DAA0D86009E4031 /* Cognizant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cognizant-Bridging-Header.h"; sourceTree = "<group>"; };
 		A02F572F1DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSValue_MKMapPoint.h"; sourceTree = "<group>"; };
 		A02F57301DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSValue_MKMapPoint.m"; sourceTree = "<group>"; };
+		A02F57321DAA14D5009E4031 /* Incident.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				A02F57261DA9E570009E4031 /* Info.plist */,
 				A02F572C1DA9F5F8009E4031 /* incidents15.json */,
 				A02F572E1DAA0D86009E4031 /* Cognizant-Bridging-Header.h */,
+				A02F57321DAA14D5009E4031 /* Incident.swift */,
 			);
 			path = Cognizant;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				A02F57311DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m in Sources */,
 				A02F571B1DA9E570009E4031 /* AppDelegate.swift in Sources */,
 				81353F101DAA1AE00076A40A /* DTMHeatmap.m in Sources */,
+				A02F57331DAA14D5009E4031 /* Incident.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
