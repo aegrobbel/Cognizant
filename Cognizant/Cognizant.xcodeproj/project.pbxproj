@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A02F571B1DA9E570009E4031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F571A1DA9E570009E4031 /* AppDelegate.swift */; };
 		A02F571D1DA9E570009E4031 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F571C1DA9E570009E4031 /* ViewController.swift */; };
-		A02F57201DA9E570009E4031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02F571E1DA9E570009E4031 /* Main.storyboard */; };
 		A02F57221DA9E570009E4031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02F57211DA9E570009E4031 /* Assets.xcassets */; };
 		A02F57251DA9E570009E4031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02F57231DA9E570009E4031 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		A02F57171DA9E570009E4031 /* Cognizant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cognizant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02F571A1DA9E570009E4031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A02F571C1DA9E570009E4031 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A02F571F1DA9E570009E4031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A02F57211DA9E570009E4031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A02F57241DA9E570009E4031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A02F57261DA9E570009E4031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 			children = (
 				A02F571A1DA9E570009E4031 /* AppDelegate.swift */,
 				A02F571C1DA9E570009E4031 /* ViewController.swift */,
-				A02F571E1DA9E570009E4031 /* Main.storyboard */,
 				A02F57211DA9E570009E4031 /* Assets.xcassets */,
 				A02F57231DA9E570009E4031 /* LaunchScreen.storyboard */,
 				A02F57261DA9E570009E4031 /* Info.plist */,
@@ -96,7 +93,7 @@
 				TargetAttributes = {
 					A02F57161DA9E570009E4031 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = WAYPW8LAE7;
+						DevelopmentTeam = F842GYZP5B;
 					};
 				};
 			};
@@ -125,7 +122,6 @@
 			files = (
 				A02F57251DA9E570009E4031 /* LaunchScreen.storyboard in Resources */,
 				A02F57221DA9E570009E4031 /* Assets.xcassets in Resources */,
-				A02F57201DA9E570009E4031 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,14 +140,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A02F571E1DA9E570009E4031 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A02F571F1DA9E570009E4031 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A02F57231DA9E570009E4031 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -252,10 +240,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F842GYZP5B;
 				INFOPLIST_FILE = Cognizant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richardkim.Cognizant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -263,10 +253,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F842GYZP5B;
 				INFOPLIST_FILE = Cognizant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richardkim.Cognizant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -289,6 +281,7 @@
 				A02F572B1DA9E570009E4031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
