@@ -12,6 +12,8 @@
 		A02F57201DA9E570009E4031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02F571E1DA9E570009E4031 /* Main.storyboard */; };
 		A02F57221DA9E570009E4031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02F57211DA9E570009E4031 /* Assets.xcassets */; };
 		A02F57251DA9E570009E4031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02F57231DA9E570009E4031 /* LaunchScreen.storyboard */; };
+		A02F572D1DA9F5F8009E4031 /* incidents15.json in Resources */ = {isa = PBXBuildFile; fileRef = A02F572C1DA9F5F8009E4031 /* incidents15.json */; };
+		A02F57311DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = A02F57301DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		A02F57211DA9E570009E4031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A02F57241DA9E570009E4031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A02F57261DA9E570009E4031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A02F572C1DA9F5F8009E4031 /* incidents15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = incidents15.json; sourceTree = "<group>"; };
+		A02F572E1DAA0D86009E4031 /* Cognizant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cognizant-Bridging-Header.h"; sourceTree = "<group>"; };
+		A02F572F1DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSValue_MKMapPoint.h"; sourceTree = "<group>"; };
+		A02F57301DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSValue_MKMapPoint.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,14 @@
 			children = (
 				A02F571A1DA9E570009E4031 /* AppDelegate.swift */,
 				A02F571C1DA9E570009E4031 /* ViewController.swift */,
+				A02F572F1DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.h */,
+				A02F57301DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m */,
 				A02F571E1DA9E570009E4031 /* Main.storyboard */,
 				A02F57211DA9E570009E4031 /* Assets.xcassets */,
 				A02F57231DA9E570009E4031 /* LaunchScreen.storyboard */,
 				A02F57261DA9E570009E4031 /* Info.plist */,
+				A02F572C1DA9F5F8009E4031 /* incidents15.json */,
+				A02F572E1DAA0D86009E4031 /* Cognizant-Bridging-Header.h */,
 			);
 			path = Cognizant;
 			sourceTree = "<group>";
@@ -126,6 +136,7 @@
 				A02F57251DA9E570009E4031 /* LaunchScreen.storyboard in Resources */,
 				A02F57221DA9E570009E4031 /* Assets.xcassets in Resources */,
 				A02F57201DA9E570009E4031 /* Main.storyboard in Resources */,
+				A02F572D1DA9F5F8009E4031 /* incidents15.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A02F571D1DA9E570009E4031 /* ViewController.swift in Sources */,
+				A02F57311DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m in Sources */,
 				A02F571B1DA9E570009E4031 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,10 +264,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Cognizant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richardkim.Cognizant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cognizant/Cognizant-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -263,10 +278,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Cognizant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richardkim.Cognizant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cognizant/Cognizant-Bridging-Header.h";
 			};
 			name = Release;
 		};
