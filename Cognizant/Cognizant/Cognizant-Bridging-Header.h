@@ -3,3 +3,8 @@
 //
 
 #import "NSObject+NSValue_MKMapPoint.h"
+#import "DTMDiffHeatmap.h"
+#import "DTMHeatmap.h"
+#import "DTMDiffColorProvider.h"
+#import "DTMColorProvider.h"
+#import "DTMHeatmapRenderer.h"

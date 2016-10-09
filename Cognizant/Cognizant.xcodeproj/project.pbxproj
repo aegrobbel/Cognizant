@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81353F0F1DAA1AE00076A40A /* DTMDiffHeatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 81353F0C1DAA1AE00076A40A /* DTMDiffHeatmap.m */; };
+		81353F101DAA1AE00076A40A /* DTMHeatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 81353F0E1DAA1AE00076A40A /* DTMHeatmap.m */; };
+		81353F171DAA1DC10076A40A /* DTMColorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 81353F141DAA1DC10076A40A /* DTMColorProvider.m */; };
+		81353F181DAA1DC10076A40A /* DTMDiffColorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 81353F161DAA1DC10076A40A /* DTMDiffColorProvider.m */; };
+		81353F1B1DAA204B0076A40A /* DTMHeatmapRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 81353F1A1DAA204B0076A40A /* DTMHeatmapRenderer.m */; };
 		A02F571B1DA9E570009E4031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F571A1DA9E570009E4031 /* AppDelegate.swift */; };
 		A02F571D1DA9E570009E4031 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F571C1DA9E570009E4031 /* ViewController.swift */; };
 		A02F57221DA9E570009E4031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02F57211DA9E570009E4031 /* Assets.xcassets */; };
@@ -16,6 +21,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81353F0B1DAA1AE00076A40A /* DTMDiffHeatmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTMDiffHeatmap.h; sourceTree = "<group>"; };
+		81353F0C1DAA1AE00076A40A /* DTMDiffHeatmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTMDiffHeatmap.m; sourceTree = "<group>"; };
+		81353F0D1DAA1AE00076A40A /* DTMHeatmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTMHeatmap.h; sourceTree = "<group>"; };
+		81353F0E1DAA1AE00076A40A /* DTMHeatmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTMHeatmap.m; sourceTree = "<group>"; };
+		81353F131DAA1DC10076A40A /* DTMColorProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTMColorProvider.h; sourceTree = "<group>"; };
+		81353F141DAA1DC10076A40A /* DTMColorProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTMColorProvider.m; sourceTree = "<group>"; };
+		81353F151DAA1DC10076A40A /* DTMDiffColorProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTMDiffColorProvider.h; sourceTree = "<group>"; };
+		81353F161DAA1DC10076A40A /* DTMDiffColorProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTMDiffColorProvider.m; sourceTree = "<group>"; };
+		81353F191DAA204B0076A40A /* DTMHeatmapRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTMHeatmapRenderer.h; sourceTree = "<group>"; };
+		81353F1A1DAA204B0076A40A /* DTMHeatmapRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTMHeatmapRenderer.m; sourceTree = "<group>"; };
 		A02F57171DA9E570009E4031 /* Cognizant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cognizant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02F571A1DA9E570009E4031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A02F571C1DA9E570009E4031 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +54,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81353F111DAA1D1F0076A40A /* DTMHeatmap */ = {
+			isa = PBXGroup;
+			children = (
+				81353F191DAA204B0076A40A /* DTMHeatmapRenderer.h */,
+				81353F1A1DAA204B0076A40A /* DTMHeatmapRenderer.m */,
+				81353F0B1DAA1AE00076A40A /* DTMDiffHeatmap.h */,
+				81353F0C1DAA1AE00076A40A /* DTMDiffHeatmap.m */,
+				81353F0D1DAA1AE00076A40A /* DTMHeatmap.h */,
+				81353F0E1DAA1AE00076A40A /* DTMHeatmap.m */,
+			);
+			name = DTMHeatmap;
+			sourceTree = "<group>";
+		};
+		81353F121DAA1DAC0076A40A /* ColorProvider */ = {
+			isa = PBXGroup;
+			children = (
+				81353F131DAA1DC10076A40A /* DTMColorProvider.h */,
+				81353F141DAA1DC10076A40A /* DTMColorProvider.m */,
+				81353F151DAA1DC10076A40A /* DTMDiffColorProvider.h */,
+				81353F161DAA1DC10076A40A /* DTMDiffColorProvider.m */,
+			);
+			name = ColorProvider;
+			sourceTree = "<group>";
+		};
 		A02F570E1DA9E570009E4031 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +97,10 @@
 		A02F57191DA9E570009E4031 /* Cognizant */ = {
 			isa = PBXGroup;
 			children = (
+				81353F121DAA1DAC0076A40A /* ColorProvider */,
 				A02F571A1DA9E570009E4031 /* AppDelegate.swift */,
 				A02F571C1DA9E570009E4031 /* ViewController.swift */,
+				81353F111DAA1D1F0076A40A /* DTMHeatmap */,
 				A02F572F1DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.h */,
 				A02F57301DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m */,
 				A02F57211DA9E570009E4031 /* Assets.xcassets */,
@@ -133,7 +174,6 @@
 				A02F57251DA9E570009E4031 /* LaunchScreen.storyboard in Resources */,
 				A02F57221DA9E570009E4031 /* Assets.xcassets in Resources */,
 				A02F572D1DA9F5F8009E4031 /* incidents15.json in Resources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +184,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81353F171DAA1DC10076A40A /* DTMColorProvider.m in Sources */,
 				A02F571D1DA9E570009E4031 /* ViewController.swift in Sources */,
+				81353F0F1DAA1AE00076A40A /* DTMDiffHeatmap.m in Sources */,
+				81353F1B1DAA204B0076A40A /* DTMHeatmapRenderer.m in Sources */,
+				81353F181DAA1DC10076A40A /* DTMDiffColorProvider.m in Sources */,
 				A02F57311DAA0D87009E4031 /* NSObject+NSValue_MKMapPoint.m in Sources */,
 				A02F571B1DA9E570009E4031 /* AppDelegate.swift in Sources */,
+				81353F101DAA1AE00076A40A /* DTMHeatmap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
     
     let mapView = MKMapView()
+    let slider = UISlider()
+    
     var locationManager: CLLocationManager?
+    
+    let sliderButton = UIBarButtonItem()
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,6 +32,7 @@ class ViewController: UIViewController {
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.showsUserLocation = true
+        mapView.delegate = self
         locationManager = CLLocationManager()
         locationManager!.requestWhenInUseAuthorization()
         
@@ -40,10 +45,42 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activateConstraints(constraints)
         
+        slider.minimumValue = 0
+        slider.maximumValue = 24
+        slider.addTarget(self, action: #selector(sliderChanged), forControlEvents: .ValueChanged)
+        sliderButton.customView = slider
+        toolbarItems = [sliderButton]
+        
         let button = UIBarButtonItem(title: "Re-Center", style: .Plain, target: self, action: #selector(reCenter))
-        toolbarItems = [ button ]
-    
+        navigationItem.rightBarButtonItem = button
+        
     }
+    
+    func sliderChanged() {
+        print(slider.value)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        sliderButton.width = view.bounds.width - 30
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let date = NSDate()
+        let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: date)
+        slider.value = Float(hour)
+        
+        let data = parseData()
+        let heatMap = DTMHeatmap()
+        heatMap.setData(data)
+        mapView.addOverlay(heatMap)
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        return DTMHeatmapRenderer.init(overlay: overlay)
+    }
+    
     func parseData() -> [NSValue : Int] {
         let url = NSBundle.mainBundle().URLForResource("incidents15", withExtension: "json")!
         let data = NSData(contentsOfURL: url)!
