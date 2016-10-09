@@ -44,35 +44,7 @@ class ViewController: UIViewController {
         toolbarItems = [ button ]
     
     }
-    func parseData() -> [NSValue : Int] {
-        let url = NSBundle.mainBundle().URLForResource("incidents15", withExtension: "json")!
-        let data = NSData(contentsOfURL: url)!
-        
-        var coords = [NSValue : Int]()
-        
-        do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-            
-            if let crimes = json["crimes"] as? [[String: AnyObject]] {
-                for crime in crimes {
-                    guard let lat = crime["LAT"] as? Double, let long = crime["LON"] as? Double, let hour = crime["HOUR"] as? Int else {
-                        continue
-                    }
-                    
-                    let loc = CLLocation(latitude: lat, longitude: long)
-                    let point = MKMapPointForCoordinate(loc.coordinate)
-                    let weight = 1
-                    let pointWrapper = NSValue(MKMapPoint: point)
-                    coords[pointWrapper] = weight
-                    
-                }
-            }
-        } catch {
-            print("error serializing JSON: \(error)")
-        }
-        return coords
-    }
-    
+
     func reCenter() {
         let userLocation = mapView.userLocation
         
@@ -81,7 +53,4 @@ class ViewController: UIViewController {
         
         mapView.setRegion(region, animated: true)
     }
-
-    
 }
-
